@@ -35,7 +35,7 @@ class PatternBuilderTest {
 
         // no vowels
         assertEquals("rhythm", patternBuilder.getPattern("rhythm"), "\"rhythm\" => \"rhythm\"");
-        assertEquals("myrrh", patternBuilder.getPattern("myrrh"), "\"myrrh\" => \"myrrh\"");
+        assertEquals("myrh", patternBuilder.getPattern("myrrh"), "\"myrrh\" => \"myrh\"");
 
         // capitalized words
         assertEquals("w-rd", patternBuilder.getPattern("WOrD"), "\"WOrD\" => \"w-rd\"");
