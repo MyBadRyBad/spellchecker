@@ -30,8 +30,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="675">
+              <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -63,8 +63,8 @@
       <file leaf-file-name="PatternBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/PatternBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+            <state relative-caret-position="120">
+              <caret line="33" column="57" lean-forward="false" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,14 +85,16 @@
       <file leaf-file-name="SpellChecker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SpellChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="134" column="41" lean-forward="false" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+            <state relative-caret-position="910">
+              <caret line="122" column="29" lean-forward="true" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#627#628#0" expanded="true" />
                 <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#4991#4992#0" expanded="true" />
-                <element signature="e#5024#5025#0" expanded="true" />
+                <element signature="e#5592#5593#0" expanded="true" />
+                <element signature="e#5622#5623#0" expanded="true" />
+                <element signature="e#5804#5805#0" expanded="true" />
+                <element signature="e#5837#5838#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,8 +172,8 @@
         <option value="$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.0.0-M4/junit-platform-commons-1.0.0-M4.jar!/org/junit/platform/commons/util/ReflectionUtils.class" />
         <option value="$PROJECT_DIR$/src/main/resources/test_words.txt" />
         <option value="$PROJECT_DIR$/src/test/java/SpellCheckerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/PatternBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/SpellChecker.java" />
       </list>
@@ -900,8 +902,10 @@
             <element signature="imports" expanded="true" />
             <element signature="e#627#628#0" expanded="true" />
             <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#4991#4992#0" expanded="true" />
-            <element signature="e#5024#5025#0" expanded="true" />
+            <element signature="e#5592#5593#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
+            <element signature="e#5804#5805#0" expanded="true" />
+            <element signature="e#5837#5838#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,8 +983,10 @@
             <element signature="imports" expanded="true" />
             <element signature="e#627#628#0" expanded="true" />
             <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#4991#4992#0" expanded="true" />
-            <element signature="e#5024#5025#0" expanded="true" />
+            <element signature="e#5592#5593#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
+            <element signature="e#5804#5805#0" expanded="true" />
+            <element signature="e#5837#5838#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1089,20 +1095,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PatternBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="675">
+          <caret line="45" column="53" lean-forward="false" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1110,16 +1106,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PatternBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="33" column="57" lean-forward="false" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SpellChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="134" column="41" lean-forward="false" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+        <state relative-caret-position="910">
+          <caret line="122" column="29" lean-forward="true" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#627#628#0" expanded="true" />
             <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#4991#4992#0" expanded="true" />
-            <element signature="e#5024#5025#0" expanded="true" />
+            <element signature="e#5592#5593#0" expanded="true" />
+            <element signature="e#5622#5623#0" expanded="true" />
+            <element signature="e#5804#5805#0" expanded="true" />
+            <element signature="e#5837#5838#0" expanded="true" />
           </folding>
         </state>
       </provider>

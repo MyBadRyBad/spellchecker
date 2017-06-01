@@ -49,6 +49,8 @@ public class SpellChecker {
 
         String word;
 
+        // read each word in the file, find the pattern for the given word, and add the word to the list of words
+        // associated with that pattern
         while ((word = bufferedReader.readLine()) != null) {
             String pattern = patternBuilder.getPattern(word);
             ArrayList<String> list = newDictionary.get(pattern);
@@ -83,22 +85,34 @@ public class SpellChecker {
         if (d == null) {
             throw new IllegalArgumentException("dictionary parameter cannot be null.");
         }
-
+        // initialize levenshtein and suggested word to noMatch.
         Levenshtein lev = new Levenshtein();
         String suggestedWord = noMatchResponse;
+
+        // create a pattern for the given word, and see if the pattern exists in the dictionary.
         String pattern = patternBuilder.getPattern(word);
         ArrayList<String> possibleWords = d.get(pattern);
 
+        // pattern exists in the dictionary
         if (possibleWords != null) {
+            // set word to lowercase as a safety measure.
             word = word.toLowerCase();
 
+            // initialize levenshteinDistance
             double currentLevenshteinDist = Double.MAX_VALUE;
+
+            // iterate through the list of words associated with the found pattern in the dictionary.
             for (String possibleWord : possibleWords) {
+
+                // calculate levenshtein distance between the given word and dictionary stored word
                 double foundLevenshteinDist = lev.distance(possibleWord, word);
+
+                // a better suggestion has been found, so replace suggestedWord.
                 if (currentLevenshteinDist >= foundLevenshteinDist) {
                     currentLevenshteinDist = foundLevenshteinDist;
                     suggestedWord = possibleWord;
 
+                    // strong match, so return suggested word.
                     if (currentLevenshteinDist == 0) {
                         return suggestedWord;
                     }

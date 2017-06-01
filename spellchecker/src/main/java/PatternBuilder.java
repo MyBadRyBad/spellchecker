@@ -31,6 +31,7 @@ public class PatternBuilder {
                 newWord.setCharAt(index, '-');
         }
 
+        // remove duplicate characters and return pattern
         return removeDuplicate(newWord.toString());
     }
 
