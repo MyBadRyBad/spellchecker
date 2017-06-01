@@ -64,6 +64,27 @@ class PatternBuilderTest {
     @Test
     void removeDuplicate() {
         PatternBuilder patternBuilder = new PatternBuilder();
+
+        // repeated letter pattern
+        assertEquals("w-rd", patternBuilder.getPattern("w------rd"), "\"w------rd\" => \"w-rd\"");
+        assertEquals("b-t", patternBuilder.getPattern("b--t"), "\"b--t\" => \"b-t\"");
+
+        // repeated letters / no pattern
+        assertEquals("why", patternBuilder.getPattern("wwwwwwwhhhhy"), "\"wwwwwwwhhhhy\" => \"why\"");
+        assertEquals("why", patternBuilder.getPattern("wwhy"), "\"wwhy\" => \"why\"");
+        assertEquals("why", patternBuilder.getPattern("whyy"), "\"whyy\" => \"why\"");
+
+        // repeated letter pattern + repeated letters
+        assertEquals("j-b", patternBuilder.getPattern("jj--bbb"), "\"jj--bbb\" => \"job\"");
+        assertEquals("z-", patternBuilder.getPattern("zzzzzoooooooooo"), "\"zzzzzoooooooooo\" => \"z-\"");
+        assertEquals("n-p-", patternBuilder.getPattern("nnnnnnnnopppppe"), "\"nnnnnnnnopppppe\" => \"n-p-\"");
+        assertEquals("n-p-", patternBuilder.getPattern("noooopeee"), "\"noooopeee\" => \"n-p-\"");
+
+        // no duplicates
+        assertEquals("w-rd", patternBuilder.getPattern("w-rd"), "\"w-rd\" => \"w-rd\"");
+        assertEquals("b-t", patternBuilder.getPattern("b-t"), "\"b-t\" => \"b-t\"");
+        assertEquals("why", patternBuilder.getPattern("why"), "\"why\" => \"why\"");
+
     }
 
     @Test
