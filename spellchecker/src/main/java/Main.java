@@ -31,7 +31,7 @@ public class Main {
         }
     }
 
-    private static String findWordsFilePath() {
+    protected static String findWordsFilePath() {
         for (int index = 0; index < Constants.WORDS_FILE_PATHS.length; index++) {
             File file = new File(Constants.WORDS_FILE_PATHS[index]);
             if (file.exists())

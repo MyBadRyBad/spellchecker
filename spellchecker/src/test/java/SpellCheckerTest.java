@@ -131,18 +131,160 @@ class SpellCheckerTest {
 
     @Test
     void spellCheckSuggest() throws IOException {
+        SpellChecker spellChecker = new SpellChecker(Main.findWordsFilePath());
+        String noSuggestion = Constants.NO_SUGGESTION_RESPONSE;
+
+        // test uppercase / lowercase
+        assertEquals("inside", spellChecker.spellCheckSuggest("inSIDE", noSuggestion));
+        assertEquals("inside", spellChecker.spellCheckSuggest("Inside", noSuggestion));
+        assertEquals("inside", spellChecker.spellCheckSuggest("insidE", noSuggestion));
+        assertEquals("inside", spellChecker.spellCheckSuggest("INSIDE", noSuggestion));
+
+        // test repeated letters
+        assertEquals("job", spellChecker.spellCheckSuggest("jjoobbb", noSuggestion));
+        assertEquals("job", spellChecker.spellCheckSuggest("joob", noSuggestion));
+        assertEquals("job", spellChecker.spellCheckSuggest("jjob", noSuggestion));
+        assertEquals("job", spellChecker.spellCheckSuggest("jobb", noSuggestion));
+        assertEquals("job", spellChecker.spellCheckSuggest("joobbbb", noSuggestion));
+        assertEquals("sheep", spellChecker.spellCheckSuggest("sheeeeep", noSuggestion));
+
+        // test incorrect vowels
+        assertEquals("job", spellChecker.spellCheckSuggest("jub", noSuggestion));
+        assertEquals("inside", spellChecker.spellCheckSuggest("insode", noSuggestion));
+
+        // test combinations
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("CUNsperrICY", noSuggestion));
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("ConspiriCY", noSuggestion));
+        assertEquals("explore", spellChecker.spellCheckSuggest("eeEExpPLiIrreeee", noSuggestion));
+        assertEquals("explore", spellChecker.spellCheckSuggest("ExploreE", noSuggestion));
+        assertEquals("people", spellChecker.spellCheckSuggest("peeople", noSuggestion));
+
+        // test correct words
+        assertEquals("inside", spellChecker.spellCheckSuggest("inside", noSuggestion));
+        assertEquals("job", spellChecker.spellCheckSuggest("job", noSuggestion));
+        assertEquals("wake", spellChecker.spellCheckSuggest("wake", noSuggestion));
+        assertEquals("bibliography", spellChecker.spellCheckSuggest("bibliography", noSuggestion));
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("conspiracy", noSuggestion));
+        assertEquals("explore", spellChecker.spellCheckSuggest("explore", noSuggestion));
+        assertEquals("lantern", spellChecker.spellCheckSuggest("lantern", noSuggestion));
+
+        // test no suggestions
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("sheeple", noSuggestion));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("frenemies", noSuggestion));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("jorbs", noSuggestion));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("floogle", noSuggestion));
     }
 
     @Test
     void spellCheckSuggest1() throws IOException {
+        SpellChecker spellChecker = new SpellChecker();
+        HashMap<String, ArrayList<String>> dictionary = spellChecker.generateDictionary(Main.findWordsFilePath());
+        String noSuggestion = Constants.NO_SUGGESTION_RESPONSE;
+
+        // test uppercase / lowercase
+        assertEquals("inside", spellChecker.spellCheckSuggest("inSIDE", noSuggestion, dictionary));
+        assertEquals("inside", spellChecker.spellCheckSuggest("Inside", noSuggestion, dictionary));
+        assertEquals("inside", spellChecker.spellCheckSuggest("insidE", noSuggestion, dictionary));
+        assertEquals("inside", spellChecker.spellCheckSuggest("INSIDE", noSuggestion, dictionary));
+
+        // test repeated letters
+        assertEquals("job", spellChecker.spellCheckSuggest("jjoobbb", noSuggestion, dictionary));
+        assertEquals("job", spellChecker.spellCheckSuggest("joob", noSuggestion, dictionary));
+        assertEquals("job", spellChecker.spellCheckSuggest("jjob", noSuggestion, dictionary));
+        assertEquals("job", spellChecker.spellCheckSuggest("jobb", noSuggestion, dictionary));
+        assertEquals("job", spellChecker.spellCheckSuggest("joobbbb", noSuggestion, dictionary));
+        assertEquals("sheep", spellChecker.spellCheckSuggest("sheeeeep", noSuggestion, dictionary));
+
+        // test incorrect vowels
+        assertEquals("job", spellChecker.spellCheckSuggest("jub", noSuggestion, dictionary));
+        assertEquals("inside", spellChecker.spellCheckSuggest("insode", noSuggestion, dictionary));
+
+        // test combinations
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("CUNsperrICY", noSuggestion, dictionary));
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("ConspiriCY", noSuggestion, dictionary));
+        assertEquals("explore", spellChecker.spellCheckSuggest("eeEExpPLiIrreeee", noSuggestion, dictionary));
+        assertEquals("explore", spellChecker.spellCheckSuggest("ExploreE", noSuggestion, dictionary));
+        assertEquals("people", spellChecker.spellCheckSuggest("peeople", noSuggestion, dictionary));
+
+        // test correct words
+        assertEquals("inside", spellChecker.spellCheckSuggest("inside", noSuggestion, dictionary));
+        assertEquals("job", spellChecker.spellCheckSuggest("job", noSuggestion, dictionary));
+        assertEquals("wake", spellChecker.spellCheckSuggest("wake", noSuggestion, dictionary));
+        assertEquals("bibliography", spellChecker.spellCheckSuggest("bibliography", noSuggestion, dictionary));
+        assertEquals("conspiracy", spellChecker.spellCheckSuggest("conspiracy", noSuggestion, dictionary));
+        assertEquals("explore", spellChecker.spellCheckSuggest("explore", noSuggestion, dictionary));
+        assertEquals("lantern", spellChecker.spellCheckSuggest("lantern", noSuggestion, dictionary));
+
+        // test no suggestions
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("sheeple", noSuggestion, dictionary));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("frenemies", noSuggestion, dictionary));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("jorbs", noSuggestion, dictionary));
+        assertEquals(noSuggestion, spellChecker.spellCheckSuggest("floogle", noSuggestion, dictionary));
     }
 
     @Test
     void setDictionary() throws IOException {
+        SpellChecker spellChecker = new SpellChecker();
+        HashMap<String, ArrayList<String>> dictionary = new HashMap<String, ArrayList<String>>();
+
+        ArrayList<String> a1 = new ArrayList<String>();
+        a1.add("a1_test1");
+
+        ArrayList<String> a2 = new ArrayList<String>();
+        a1.add("a2_test1");
+        a1.add("a2_test2");
+
+        ArrayList<String> a3 = new ArrayList<String>();
+        a1.add("a3_test1");
+        a1.add("a3_test2");
+        a1.add("a3_test3");
+
+        ArrayList<String> a4 = new ArrayList<String>();
+        a1.add("a4_test1");
+        a1.add("a4_test2");
+        a1.add("a4_test3");
+        a1.add("a4_test4");
+
+        dictionary.put("a1_key", a1);
+        dictionary.put("a2_key", a2);
+        dictionary.put("a3_key", a3);
+        dictionary.put("a4_key", a4);
+
+        spellChecker.setDictionary(dictionary);
+        assertEquals(dictionary, spellChecker.getDictionary());
     }
 
     @Test
     void getDictionary() throws IOException {
+        SpellChecker spellChecker = new SpellChecker();
+        HashMap<String, ArrayList<String>> dictionary = new HashMap<String, ArrayList<String>>();
+
+        ArrayList<String> a1 = new ArrayList<String>();
+        a1.add("a1_test1");
+
+        ArrayList<String> a2 = new ArrayList<String>();
+        a1.add("a2_test1");
+        a1.add("a2_test2");
+
+        ArrayList<String> a3 = new ArrayList<String>();
+        a1.add("a3_test1");
+        a1.add("a3_test2");
+        a1.add("a3_test3");
+
+        ArrayList<String> a4 = new ArrayList<String>();
+        a1.add("a4_test1");
+        a1.add("a4_test2");
+        a1.add("a4_test3");
+        a1.add("a4_test4");
+
+        dictionary.put("a1_key", a1);
+        dictionary.put("a2_key", a2);
+        dictionary.put("a3_key", a3);
+        dictionary.put("a4_key", a4);
+
+        spellChecker.setDictionary(dictionary);
+        assertEquals(dictionary, spellChecker.getDictionary());
+
     }
 
 }
