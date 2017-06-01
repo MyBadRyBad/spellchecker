@@ -1,12 +1,23 @@
-/**
- * Created by ryanbadilla on 6/1/17.
- */
-
 import java.util.HashMap;
 import java.util.ArrayList;
 
+/**
+ * PatternBuilder is a helper object that generates a pattern for a given word
+ * via ignoring vowels and duplicate characters.
+ *
+ * Created by ryanbadilla on 6/1/17.
+ */
 public class PatternBuilder {
 
+    /**
+     * getPattern generates a pattern for a given word by first substituting all vowels with the common character '-',
+     * then removing duplicate characters. For example, the word "word" will be generated as "w-rd" by going through the
+     * process of "word" -> "w-rd". The word "people" will be generated as "p-pl-" by going through the process of
+     * "people" -> "p--pl-" -> "p-pl-";
+     *
+     * @param word the given word to generate a pattern.
+     * @return a pattern representation of the given word.
+     */
     public String getPattern(String word) {
         // set word to lowercase
         word = word.toLowerCase();
@@ -23,6 +34,12 @@ public class PatternBuilder {
         return removeDuplicate(newWord.toString());
     }
 
+    /**
+     * removeDuplicate removes duplicate characters occurring characters within a given word.
+     *
+     * @param word a word to remove duplicates character from.
+     * @return a word with duplicates removed.
+     */
     public String removeDuplicate(String word) {
         // use stringbuilder to create mutable string
         StringBuilder newWord = new StringBuilder(word);
@@ -38,6 +55,12 @@ public class PatternBuilder {
         return newWord.toString();
     }
 
+    /**
+     * isVowel determines whether or not a character is a vowel.
+     *
+     * @param character the character to check if it is a vowel.
+     * @return true if a vowel, else false
+     */
     public boolean isVowel(char character) {
         String vowels = "aeiou";
 

@@ -1,4 +1,6 @@
 /**
+ * Main.
+ *
  * Created by ryanbadilla on 6/1/17.
  */
 import java.io.File;
@@ -31,6 +33,10 @@ public class Main {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     protected static String findWordsFilePath() {
         for (int index = 0; index < Constants.WORDS_FILE_PATHS.length; index++) {
             File file = new File(Constants.WORDS_FILE_PATHS[index]);
