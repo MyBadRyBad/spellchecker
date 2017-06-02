@@ -4,7 +4,7 @@ A generic spellchecker written in Java to meet the guidelines in the "Project Gu
 
 Build the Project
 ====================================
-The project can can built using maven.
+The project can can built using [Maven](http://maven.apache.org/).
 
 ```
 % cd spellchecker
