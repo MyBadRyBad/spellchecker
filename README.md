@@ -19,7 +19,7 @@ $ mvn clean package
 $ java -jar target/spellchecker-1.0.jar wooord
 word
 $ java -jar target/spellchecker-1.0.jar peeple
-peeple
+people
 ```
 
 You can alternatively use the compiled spellchecker.jar to run the spellchecker without building the project.
@@ -36,8 +36,8 @@ people
 $ java -jar target/spellchecker-1.0.jar wooord
 word
 $ java -jar target/spellchecker-1.0.jar peeple
-people$ 
-java -jar target/spellchecker-1.0.jar jjoobbb
+people 
+$ java -jar target/spellchecker-1.0.jar jjoobbb
 job
 $ java -jar target/spellchecker-1.0.jar CUNsperrICY
 conspiracy
