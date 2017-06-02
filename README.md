@@ -47,6 +47,7 @@ $ java -jar target/spellchecker-1.0.jar sheeple
 NO SUGGESTION
 ```
 
+***
 
 ## Project Guidelines
 
