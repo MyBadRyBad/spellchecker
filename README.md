@@ -9,9 +9,10 @@ The project can can built using maven.
 ```
 % cd spellchecker
 $ mvn clean package
-$ java -jar java -jar target/spellchecker-1.0.jar word
+$ java -jar target/spellchecker-1.0.jar word
 ```
 
+You can alternatively use the compiled spellchecker.jar to run the spellchecker without building the project.
 
 ## Sample Input
 ```
@@ -30,7 +31,7 @@ NO SUGGESTION
 ```
 
 
-##Project Guidelines
+## Project Guidelines
 
 ### Overview
 Write a program that reads a large list of English words (e.g. from /usr/share/dict/words on a unix system) into memory, and uses that dictionary to provide spelling suggestions for user input.
