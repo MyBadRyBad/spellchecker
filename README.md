@@ -1,10 +1,10 @@
 # spellchecker
 
-SpellChecker 
+A generic spellchecker written in Java to meet the guidelines in the "Project Guidelines" section.
 
 Build the Project
 ====================================
-You can build the project using maven.
+The project can can built using maven.
 
 ```
 % cd spellchecker
@@ -13,7 +13,7 @@ $ java -jar java -jar target/spellchecker-1.0.jar word
 ```
 
 
-## Sample
+## Sample Input
 ```
 $ java -jar target/spellchecker-1.0.jar wooord
 word
@@ -29,13 +29,13 @@ $ java -jar target/spellchecker-1.0.jar sheeple
 NO SUGGESTION
 ```
 
-Project Guidelines
-====================================
 
-## Overview
+##Project Guidelines
+
+### Overview
 Write a program that reads a large list of English words (e.g. from /usr/share/dict/words on a unix system) into memory, and uses that dictionary to provide spelling suggestions for user input.
 
-## Language
+### Language
 
 Solutions should be written in 1 of the following languages: 
 
@@ -45,7 +45,7 @@ Solutions should be written in 1 of the following languages:
 * Go
 * Java
 
-## Spec
+### Spec
 
 Your program should be a cli that takes first argument and outputs the results to STDOUT 
 
@@ -55,7 +55,7 @@ Sample classes of spelling mistakes to be corrected is as follows:
 * Repeated letters: "jjoobbb" => "job" 
 * Incorrect vowels: "weke" => "wake" 
 
-## Other Notes
+### Other Notes
 
 * Any combination of the above types of error in a single word should be corrected (e.g. "CUNsperrICY" => "conspiracy").
 * If there are many possible corrections of an input word, program can choose one in any way you like. It just has to be an English word that is a spelling correction of the input by the above rules.
