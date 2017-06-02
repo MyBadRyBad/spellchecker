@@ -2,17 +2,34 @@
 
 A generic spellchecker written in Java to meet the guidelines in the "Project Guidelines" section.
 
+Project uses english words from 
+https://github.com/dwyl/english-words
+
+and tdebatty's implementation of Levenshtein distance
+https://github.com/tdebatty/java-string-similarity
+
+
 Build the Project
 ====================================
 The project can can built using [Maven](http://maven.apache.org/).
 
 ```
-% cd spellchecker
+$ cd spellchecker
 $ mvn clean package
-$ java -jar target/spellchecker-1.0.jar word
+$ java -jar target/spellchecker-1.0.jar wooord
+word
+$ java -jar target/spellchecker-1.0.jar peeple
+peeple
 ```
 
 You can alternatively use the compiled spellchecker.jar to run the spellchecker without building the project.
+
+```
+$ java -jar spellchecker.jar wooord
+word
+$ java -jar spellchecker.jar peeple
+people
+```
 
 ## Sample Input
 ```
